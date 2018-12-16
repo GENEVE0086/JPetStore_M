@@ -1,0 +1,40 @@
+[framework] 2018-12-14 17:21:55,831 - org.csu.geneve.web.filter.log.LogFilter -0    [http-nio-8080-exec-1] INFO  org.csu.geneve.web.filter.log.LogFilter  - 1.2018-12-14 17:21:55:user:Temporary user visit /JPetStore_M_war_exploded/
+
+[framework] 2018-12-14 17:23:42,310 - org.csu.geneve.web.filter.log.LogFilter -106479 [http-nio-8080-exec-6] INFO  org.csu.geneve.web.filter.log.LogFilter  - 2.2018-12-14 17:23:41:user:Temporary user visit /JPetStore_M_war_exploded/main
+
+[framework] 2018-12-14 17:23:43,432 - org.csu.geneve.web.filter.log.LogFilter -107601 [http-nio-8080-exec-7] INFO  org.csu.geneve.web.filter.log.LogFilter  - 8.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/sm_reptiles.gif
+
+[framework] 2018-12-14 17:23:43,439 - org.csu.geneve.web.filter.log.LogFilter -107608 [http-nio-8080-exec-8] INFO  org.csu.geneve.web.filter.log.LogFilter  - 8.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/sm_reptiles.gif
+
+[framework] 2018-12-14 17:23:43,507 - org.csu.geneve.web.filter.log.LogFilter -107676 [http-nio-8080-exec-1] INFO  org.csu.geneve.web.filter.log.LogFilter  - 10.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/sm_birds.gif
+
+[framework] 2018-12-14 17:23:43,527 - org.csu.geneve.web.filter.log.LogFilter -107696 [http-nio-8080-exec-9] INFO  org.csu.geneve.web.filter.log.LogFilter  - 11.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/reptiles_icon.gif
+
+[framework] 2018-12-14 17:23:43,529 - org.csu.geneve.web.filter.log.LogFilter -107698 [http-nio-8080-exec-10] INFO  org.csu.geneve.web.filter.log.LogFilter  - 11.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/reptiles_icon.gif
+
+[framework] 2018-12-14 17:23:43,534 - org.csu.geneve.web.filter.log.LogFilter -107703 [http-nio-8080-exec-2] INFO  org.csu.geneve.web.filter.log.LogFilter  - 13.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/sm_cats.gif
+
+[framework] 2018-12-14 17:23:43,908 - org.csu.geneve.web.filter.log.LogFilter -108077 [http-nio-8080-exec-4] INFO  org.csu.geneve.web.filter.log.LogFilter  - 14.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/splash.gif
+
+[framework] 2018-12-14 17:23:43,908 - org.csu.geneve.web.filter.log.LogFilter -108077 [http-nio-8080-exec-3] INFO  org.csu.geneve.web.filter.log.LogFilter  - 14.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/splash.gif
+
+[framework] 2018-12-14 17:23:43,940 - org.csu.geneve.web.filter.log.LogFilter -108109 [http-nio-8080-exec-5] INFO  org.csu.geneve.web.filter.log.LogFilter  - 16.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/birds_icon.gif
+
+[framework] 2018-12-14 17:23:43,946 - org.csu.geneve.web.filter.log.LogFilter -108115 [http-nio-8080-exec-6] INFO  org.csu.geneve.web.filter.log.LogFilter  - 16.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/birds_icon.gif
+
+[framework] 2018-12-14 17:23:43,976 - org.csu.geneve.web.filter.log.LogFilter -108145 [http-nio-8080-exec-7] INFO  org.csu.geneve.web.filter.log.LogFilter  - 16.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/birds_icon.gif
+
+[framework] 2018-12-14 17:23:43,982 - org.csu.geneve.web.filter.log.LogFilter -108151 [http-nio-8080-exec-8] INFO  org.csu.geneve.web.filter.log.LogFilter  - 16.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/birds_icon.gif
+
+[framework] 2018-12-14 17:23:44,376 - org.csu.geneve.web.filter.log.LogFilter -108545 [http-nio-8080-exec-9] INFO  org.csu.geneve.web.filter.log.LogFilter  - 16.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/birds_icon.gif
+
+[framework] 2018-12-14 17:23:44,377 - org.csu.geneve.web.filter.log.LogFilter -108546 [http-nio-8080-exec-1] INFO  org.csu.geneve.web.filter.log.LogFilter  - 16.2018-12-14 17:23:43:user:Temporary user visit /JPetStore_M_war_exploded/images/birds_icon.gif
+
+[framework] 2018-12-14 17:25:50,861 - org.csu.geneve.web.filter.log.LogFilter -235030 [http-nio-8080-exec-7] INFO  org.csu.geneve.web.filter.log.LogFilter  - 17.2018-12-14 17:25:50:user:Temporary user visit /JPetStore_M_war_exploded/signonForm
+
+[framework] 2018-12-14 17:25:51,515 - org.csu.geneve.web.filter.log.LogFilter -235684 [http-nio-8080-exec-8] INFO  org.csu.geneve.web.filter.log.LogFilter  - 18.2018-12-14 17:25:51:user:Temporary user visit /JPetStore_M_war_exploded/verify
+
+[framework] 2018-12-14 17:26:06,726 - org.csu.geneve.web.filter.log.LogFilter -250895 [http-nio-8080-exec-1] INFO  org.csu.geneve.web.filter.log.LogFilter  - 19.2018-12-14 17:26:06:user:Temporary user visit /JPetStore_M_war_exploded/login
+
+[framework] 2018-12-14 17:27:33,577 - org.csu.geneve.web.filter.log.LogFilter -337746 [http-nio-8080-exec-6] INFO  org.csu.geneve.web.filter.log.LogFilter  - 20.2018-12-14 17:27:33:user:a visit /JPetStore_M_war_exploded/help.html
+
