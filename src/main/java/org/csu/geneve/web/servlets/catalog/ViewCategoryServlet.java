@@ -14,9 +14,8 @@ import org.csu.geneve.domain.Product;
 import org.csu.geneve.service.CatalogService;
 
 public class ViewCategoryServlet extends HttpServlet {
-
+  /* jsp path */
   private static final String VIEW_CATEGORY =
-          /* jsp path */
           "/WEB-INF/jsp/catalog/Category.jsp";
 
   private String categoryId;

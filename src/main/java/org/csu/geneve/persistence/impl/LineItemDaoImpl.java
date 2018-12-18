@@ -14,7 +14,7 @@ public class LineItemDaoImpl implements LineItemDao {
   constants
   SQL Language
   */
-  private static final String FET_LINE_ITEMS_BY_ORDER_ID =
+  private static final String GET_LINE_ITEMS_BY_ORDER_ID =
           "SELECT ORDERID, LINENUM AS lineNumber, ITEMID, QUANTITY, "
                   + "UNITPRICE FROM LINEITEM WHERE ORDERID = ?";
   private static final String INSERT_ITEM_LINE =
@@ -30,7 +30,7 @@ public class LineItemDaoImpl implements LineItemDao {
     try {
       /* connect to mysql and get data */
       Connection connection = DataBaseUtil.getConnection();
-      PreparedStatement preparedStatement = connection.prepareStatement(FET_LINE_ITEMS_BY_ORDER_ID);
+      PreparedStatement preparedStatement = connection.prepareStatement(GET_LINE_ITEMS_BY_ORDER_ID);
       preparedStatement.setString(1,orderId + "");
       ResultSet resultSet = preparedStatement.executeQuery();
 

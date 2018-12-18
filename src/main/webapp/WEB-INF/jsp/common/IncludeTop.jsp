@@ -61,7 +61,8 @@
         <a href="editAccountForm">
           My Account
         </a>
-        <a href="#">
+        <img align="middle" src="images/separator.gif"/>
+        <a href="viewHistory">
           History
         </a>
       </c:if>

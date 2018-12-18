@@ -22,6 +22,14 @@
       <param-value>text/html;charset=UTF-8</param-value>
     </init-param>
   </filter>
+  <filter>
+    <filter-name>HistoryFilter</filter-name>
+    <filter-class>org.csu.geneve.web.filter.history.HistoryFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>HistoryFilter</filter-name>
+    <url-pattern>/viewItem</url-pattern>
+  </filter-mapping>
 
   <filter-mapping>
     <filter-name>LogFilter</filter-name>
@@ -115,6 +123,10 @@
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>org.csu.geneve.web.servlets.account.LoginServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ViewHistoryServlet</servlet-name>
+    <servlet-class>org.csu.geneve.web.servlets.catalog.ViewHistoryServlet</servlet-class>
+  </servlet>
 
 
   <servlet-mapping>
@@ -204,6 +216,10 @@
   <servlet-mapping>
     <servlet-name>VerifyServlet</servlet-name>
     <url-pattern>/verify</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewHistoryServlet</servlet-name>
+    <url-pattern>/viewHistory</url-pattern>
   </servlet-mapping>
 
   <welcome-file-list>
