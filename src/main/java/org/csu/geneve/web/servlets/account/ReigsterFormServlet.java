@@ -26,8 +26,6 @@ public class ReigsterFormServlet extends HttpServlet {
 
   static void doAccount(HttpServletRequest request, HttpServletResponse response, String jspPath)
           throws ServletException, IOException {
-    /* get session */
-    HttpSession session = request.getSession();
 
     /* edit data */
     List<String> languages = new ArrayList<String>();
@@ -40,6 +38,9 @@ public class ReigsterFormServlet extends HttpServlet {
     categories.add("REPTILES");
     categories.add("CATS");
     categories.add("BIRDS");
+
+    /* get session */
+    HttpSession session = request.getSession();
 
     /* config info in session */
     session.setAttribute("languages",languages);

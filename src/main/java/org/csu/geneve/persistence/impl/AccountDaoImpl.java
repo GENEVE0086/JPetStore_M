@@ -153,31 +153,6 @@ public class AccountDaoImpl implements AccountDao {
     updateProfile(account, INSERT_PROFILE);
   }
 
-  private void updateProfile(Account account, String insertProfile) {
-    try {
-      /* connect to mysql and get data */
-      Connection connection = DataBaseUtil.getConnection();
-      PreparedStatement preparedStatement = connection.prepareStatement(insertProfile);
-
-      /* config the update info */
-      preparedStatement.setString(1,account.getLanguagePreference());
-      preparedStatement.setString(2,account.getFavouriteCategoryId());
-      preparedStatement.setInt(3,account.isListOption() ? 1 : 0);
-      preparedStatement.setInt(4,account.isBannerOption() ? 1 : 0);
-      preparedStatement.setString(5,account.getUsername());
-
-      /* update */
-      preparedStatement.executeUpdate();
-
-      /* disconnect to database */
-      DataBaseUtil.closePreparedStatement(preparedStatement);
-      DataBaseUtil.closeConnection(connection);
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-
   @Override
   public void insertSignon(Account account) {
     updateSignon(account, INSERT_SIGNON);
@@ -223,6 +198,31 @@ public class AccountDaoImpl implements AccountDao {
   @Override
   public void updateProfile(Account account) {
     updateProfile(account, UPDATE_PROFILE);
+  }
+
+  private void updateProfile(Account account, String insertProfile) {
+    try {
+      /* connect to mysql and get data */
+      Connection connection = DataBaseUtil.getConnection();
+      PreparedStatement preparedStatement = connection.prepareStatement(insertProfile);
+
+      /* config the update info */
+      preparedStatement.setString(1,account.getLanguagePreference());
+      preparedStatement.setString(2,account.getFavouriteCategoryId());
+      preparedStatement.setInt(3,account.isListOption() ? 1 : 0);
+      preparedStatement.setInt(4,account.isBannerOption() ? 1 : 0);
+      preparedStatement.setString(5,account.getUsername());
+
+      /* update */
+      preparedStatement.executeUpdate();
+
+      /* disconnect to database */
+      DataBaseUtil.closePreparedStatement(preparedStatement);
+      DataBaseUtil.closeConnection(connection);
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
 

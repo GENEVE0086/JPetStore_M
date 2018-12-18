@@ -97,8 +97,9 @@ public class NewAccountServlet extends HttpServlet {
 
       account = new Account();
       account.setUsername(username);
-      ConfirmEditServlet.setAccount(password, firstName, lastName, email, phone, address1, address2, city, state, zip,
-              country, languages, categories, listOption, bannerOption, account);
+      ConfirmEditServlet.setAccount(password, firstName, lastName, email, phone,
+              address1, address2, city, state, zip, country, languages, categories,
+              listOption, bannerOption, account);
 
       /* service to put new info into data base*/
       AccountService accountService = new AccountService();

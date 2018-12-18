@@ -1,9 +1,5 @@
 package org.csu.geneve.web.servlets.order;
 
-import org.csu.geneve.domain.Account;
-import org.csu.geneve.domain.Cart;
-import org.csu.geneve.domain.Order;
-
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -11,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.csu.geneve.domain.Account;
+import org.csu.geneve.domain.Cart;
+import org.csu.geneve.domain.Order;
 
 public class ViewOrderFormServlet extends HttpServlet {
   /* jsp path */

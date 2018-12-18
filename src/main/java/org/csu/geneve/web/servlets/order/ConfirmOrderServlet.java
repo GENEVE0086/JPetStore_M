@@ -1,7 +1,5 @@
 package org.csu.geneve.web.servlets.order;
 
-import org.csu.geneve.domain.Order;
-
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -9,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.csu.geneve.domain.Order;
 
 public class ConfirmOrderServlet extends HttpServlet {
   /* jsp path */
@@ -37,7 +37,6 @@ public class ConfirmOrderServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     /* get account info from session */
-    HttpSession session = request.getSession();
     cardType = request.getParameter("cardType");
     creditCard = request.getParameter("creditCard");
     expiryDate = request.getParameter("expiryDate");
@@ -49,6 +48,7 @@ public class ConfirmOrderServlet extends HttpServlet {
     state = request.getParameter("state");
     zip = request.getParameter("zip");
     country = request.getParameter("country");
+    HttpSession session = request.getSession();
 
     /* get order from session and change it with the info just get */
     Order order = (Order)session.getAttribute("order");

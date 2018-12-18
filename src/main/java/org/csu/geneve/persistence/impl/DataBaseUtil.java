@@ -10,10 +10,11 @@ import java.sql.Statement;
 public class DataBaseUtil {
 
   /* constants information about the database */
-  private static String driver = "com.mysql.jdbc.Driver";
-  private static String connectionName = "jdbc:mysql://47.101.180.71:3306/mypetstore?useUnicode=true&amp;characterEncoding=UTF-8";
-  private static String userName = "root";
-  private static String password = "0k0k69??";
+  private static final String DRIVER = "com.mysql.jdbc.Driver";
+  private static final String CONNECTION_NAME =
+          "jdbc:mysql://47.101.180.71:3306/mypetstore?useUnicode=true&amp;characterEncoding=UTF-8";
+  private static final String USER_NAME = "root";
+  private static final String PASSWORD = "0k0k69??";
 
   /*
   connect to database
@@ -21,8 +22,8 @@ public class DataBaseUtil {
   */
   public static Connection getConnection() throws Exception {
     Connection connection = null;
-    Class.forName(driver);
-    connection = DriverManager.getConnection(connectionName, userName, password);
+    Class.forName(DRIVER);
+    connection = DriverManager.getConnection(CONNECTION_NAME, USER_NAME, PASSWORD);
     return connection;
   }
 

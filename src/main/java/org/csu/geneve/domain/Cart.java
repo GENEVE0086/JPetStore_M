@@ -13,7 +13,8 @@ import java.util.Map;
 public class Cart implements Serializable {
 
   private static final long serialVersionUID = 8329559983943337176L;
-  private final Map<String, CartItem> itemMap = Collections.synchronizedMap(new HashMap<String, CartItem>());
+  private final Map<String, CartItem> itemMap =
+          Collections.synchronizedMap(new HashMap<String, CartItem>());
   private final List<CartItem> itemList = new ArrayList<CartItem>();
 
   public Iterator<CartItem> getCartItems() {

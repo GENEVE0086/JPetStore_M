@@ -1,24 +1,11 @@
 package org.csu.geneve.web.servlets.account;
 
-import com.aliyuncs.DefaultAcsClient;
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.IAcsClient;
-import com.aliyuncs.afs.model.v20180112.AuthenticateSigRequest;
-import com.aliyuncs.afs.model.v20180112.AuthenticateSigResponse;
-import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.profile.IClientProfile;
-
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.csu.geneve.domain.Account;
-import org.csu.geneve.service.AccountService;
 
 public class SignonFormServlet extends HttpServlet {
   /* jsp path */

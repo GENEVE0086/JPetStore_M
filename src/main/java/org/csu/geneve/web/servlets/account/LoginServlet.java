@@ -1,14 +1,15 @@
 package org.csu.geneve.web.servlets.account;
 
-import org.csu.geneve.domain.Account;
-import org.csu.geneve.service.AccountService;
+import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
+
+import org.csu.geneve.domain.Account;
+import org.csu.geneve.service.AccountService;
 
 public class LoginServlet extends HttpServlet {
   /* jsp path */
@@ -45,10 +46,10 @@ public class LoginServlet extends HttpServlet {
       return;
     }
 
-    String piccode=(String) request.getSession().getAttribute("piccode");
-    String checkCode=request.getParameter("checkCode");  //取值
+    String piccode = (String) request.getSession().getAttribute("piccode");
+    String checkCode = request.getParameter("checkCode");  //取值
     //把字符全部转换为大写的（此语句可以用于验证码不区分大小写）
-    checkCode=checkCode.toUpperCase();
+    checkCode = checkCode.toUpperCase();
     if (!checkCode.equals(piccode)) {
       session.setAttribute("message", "verify code wrong");
       request.getRequestDispatcher(SIGNON_FORM).forward(request, response);

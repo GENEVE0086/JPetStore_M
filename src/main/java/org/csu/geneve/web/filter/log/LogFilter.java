@@ -1,19 +1,22 @@
 package org.csu.geneve.web.filter.log;
 
-import org.csu.geneve.domain.Account;
-
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
-import org.csu.geneve.service.LogService;
-//import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.apache.log4j.Logger;
+
+import org.csu.geneve.domain.Account;
+import org.csu.geneve.service.LogService;
 
 public class LogFilter implements Filter {
 
