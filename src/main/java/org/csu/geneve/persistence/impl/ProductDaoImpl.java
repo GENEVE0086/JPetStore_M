@@ -19,11 +19,14 @@ public class ProductDaoImpl implements ProductDao {
   SQL Language
   */
   private static final String GET_PRODUCT =
-          "SELECT PRODUCTID, NAME, DESCN as description, CATEGORY as categoryId FROM PRODUCT WHERE PRODUCTID = ?";
+          "SELECT PRODUCTID, NAME, DESCN as description, CATEGORY as "
+                  + "categoryId FROM PRODUCT WHERE PRODUCTID = ?";
   private static final String GET_PRODUCT_LIST =
-          "SELECT PRODUCTID, NAME, DESCN as description, CATEGORY as categoryId FROM PRODUCT WHERE CATEGORY = ?";
+          "SELECT PRODUCTID, NAME, DESCN as description, CATEGORY as "
+                  + "categoryId FROM PRODUCT WHERE CATEGORY = ?";
   private static final String SEARCH_PRODUCT_LIST =
-          "select PRODUCTID, NAME, DESCN as description, CATEGORY as categoryId FROM PRODUCT WHERE lower(name) like ?";
+          "SELECT PRODUCTID, NAME, DESCN as description, CATEGORY as "
+                  + "categoryId FROM PRODUCT WHERE lower(name) like ?";
 
   @Override
   public List<Product> getProductList(String categoryId) {

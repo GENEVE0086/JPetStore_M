@@ -8,7 +8,7 @@
 <%@ include file="../common/IncludeTop.jsp"%>
 
 <div id="BackLink">
-  <a href="#">Return to ${sessionScope.product.productId}</a>
+  <a href="viewProduct?productId=${sessionScope.product.productId}">Return to ${sessionScope.product.productId}</a>
 </div>
 
 <div id="Catalog">

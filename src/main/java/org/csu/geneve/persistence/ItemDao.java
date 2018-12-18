@@ -14,4 +14,6 @@ public interface ItemDao {
   List<Item> getItemList(String productId);
 
   Item getItem(String itemId);
+
+  String getProductId(String itemId);
 }

@@ -20,16 +20,30 @@ public class ItemDaoImpl implements ItemDao {
   SQL Language
   */
   private static final String  GET_ITEM_LIST =
-          "SELECT I.ITEMID,LISTPRICE,UNITCOST,SUPPLIER AS supplierId,I.PRODUCTID AS productId,NAME AS productName,DESCN AS productDescription,CATEGORY AS categoryId,STATUS,ATTR1 AS attribute1,ATTR2 AS attribute2,ATTR3 AS attribute3,ATTR4 AS attribute4,ATTR5 AS attribute5 FROM ITEM I, PRODUCT P WHERE P.PRODUCTID = I.PRODUCTID AND I.PRODUCTID = ?";
+          "SELECT I.ITEMID,LISTPRICE,UNITCOST,SUPPLIER AS supplierId, "
+                  + "I.PRODUCTID AS productId, NAME AS productName, DESCN AS "
+                  + "productDescription, CATEGORY AS categoryId, STATUS, ATTR1 AS "
+                  + "attribute1, ATTR2 AS attribute2, ATTR3 AS attribute3, ATTR4 AS "
+                  + "attribute4, ATTR5 AS attribute5 FROM ITEM I, PRODUCT P WHERE "
+                  + "P.PRODUCTID = I.PRODUCTID AND I.PRODUCTID = ?";
 
   private static final String GET_ITEM =
-          "select I.ITEMID,LISTPRICE,UNITCOST,SUPPLIER AS supplierId,I.PRODUCTID AS productId,NAME AS productName,DESCN AS productDescription,CATEGORY AS CategoryId,STATUS,ATTR1 AS attribute1,ATTR2 AS attribute2,ATTR3 AS attribute3,ATTR4 AS attribute4,ATTR5 AS attribute5,QTY AS quantity from ITEM I, INVENTORY V, PRODUCT P where P.PRODUCTID = I.PRODUCTID and I.ITEMID = V.ITEMID and I.ITEMID=?";
+          "SELECT I.ITEMID, LISTPRICE, UNITCOST, SUPPLIER AS supplierId, "
+                  + "I.PRODUCTID AS productId, NAME AS productName, DESCN AS "
+                  + "productDescription, CATEGORY AS CategoryId, STATUS, ATTR1 AS "
+                  + "attribute1, ATTR2 AS attribute2, ATTR3 AS attribute3, ATTR4 AS "
+                  + "attribute4, ATTR5 AS attribute5, QTY AS quantity FROM ITEM I, "
+                  + "INVENTORY V, PRODUCT P WHERE P.PRODUCTID = I.PRODUCTID AND "
+                  + "I.ITEMID = V.ITEMID AND I.ITEMID = ?";
 
   private static final String GET_INVENTORY_QUANTITY =
           "SELECT QTY AS QUANTITY FROM INVENTORY WHERE ITEMID = ?";
 
   private static final String UPDATE_INVENTORY_QUANTITY =
           "UPDATE INVENTORY SET QTY = QTY - ? WHERE ITEMID = ?";
+
+  private static final String GET_PRODUCT_ID =
+          "SELECT PRODUCTID, ITEMID FROM ITEM WHERE ITEMID= ?";
 
   @Override
   public void updateInventoryQuantity(Map<String, Object> param) {
@@ -139,6 +153,31 @@ public class ItemDaoImpl implements ItemDao {
     }
     //return the result object
     return item;
+  }
+
+  @Override
+  public String getProductId(String itemId) {
+    String productId = null;
+    try {
+      /* connect to mysql and get data */
+      Connection connection = DataBaseUtil.getConnection();
+      PreparedStatement preparedStatement = connection.prepareStatement(GET_PRODUCT_ID);
+      preparedStatement.setString(1,itemId);
+      ResultSet resultSet = preparedStatement.executeQuery();
+
+      /* progress data */
+      if (resultSet.next()) {
+        productId = resultSet.getString(1);
+      }
+
+      /* disconnect to database */
+      DataBaseUtil.closeResultSet(resultSet);
+      DataBaseUtil.closePreparedStatement(preparedStatement);
+      DataBaseUtil.closeConnection(connection);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return productId;
   }
 
   //turn a set of data from database into a Item
