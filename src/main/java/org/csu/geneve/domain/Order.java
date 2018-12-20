@@ -2,6 +2,7 @@ package org.csu.geneve.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -13,7 +14,7 @@ public class Order implements Serializable {
 
   private int orderId;
   private String username;
-  private Date orderDate;
+  private String orderDate;
   private String shipAddress1;
   private String shipAddress2;
   private String shipCity;
@@ -55,11 +56,11 @@ public class Order implements Serializable {
     this.username = username;
   }
 
-  public Date getOrderDate() {
+  public String getOrderDate() {
     return orderDate;
   }
 
-  public void setOrderDate(Date orderDate) {
+  public void setOrderDate(String orderDate) {
     this.orderDate = orderDate;
   }
 
@@ -258,7 +259,9 @@ public class Order implements Serializable {
   public void initOrder(Account account, Cart cart) {
 
     username = account.getUsername();
-    orderDate = new Date();
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+    Date currentDate = new Date();
+    orderDate = formatter.format(currentDate);
 
     shipToFirstName = account.getFirstName();
     shipToLastName = account.getLastName();

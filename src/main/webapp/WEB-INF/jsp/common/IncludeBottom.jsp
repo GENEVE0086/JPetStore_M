@@ -10,7 +10,7 @@
 <div id="Footer">
 
   <div id="PoweredBy">
-    &nbsp<a href="www.csu.edu.cn">www.csu.edu.cn</a>
+    &nbsp<a href="http://www.csu.edu.cn">www.csu.edu.cn</a>
   </div>
 
   <div id="Banner">

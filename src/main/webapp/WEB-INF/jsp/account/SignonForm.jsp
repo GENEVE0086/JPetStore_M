@@ -5,7 +5,7 @@
 
 		<p>Please enter your username and password.</p>
 		<p>Username:
-			<input type="text" name="username" value="${sessionScope.username}">
+			<input type="text" name="username" value="">
 			<br/>
 		Password:
 			<input type="password" name="password">

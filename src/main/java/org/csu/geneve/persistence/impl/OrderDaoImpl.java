@@ -127,7 +127,7 @@ public class OrderDaoImpl implements OrderDao {
     order.setCreditCard(resultSet.getString(19));
     order.setExpiryDate(resultSet.getString(20));
     order.setLocale(resultSet.getString(21));
-    order.setOrderDate(resultSet.getDate(22));
+    order.setOrderDate(resultSet.getString(22));
     order.setOrderId(resultSet.getInt(23));
     order.setTotalPrice(resultSet.getBigDecimal(24));
     order.setUsername(resultSet.getString(25));
@@ -144,7 +144,7 @@ public class OrderDaoImpl implements OrderDao {
       /* config the update info */
       preparedStatement.setString(1, order.getOrderId() + "");
       preparedStatement.setString(2, order.getUsername());
-      preparedStatement.setString(3, order.getOrderDate().toString());
+      preparedStatement.setString(3, order.getOrderDate());
       preparedStatement.setString(4, order.getShipAddress1());
       preparedStatement.setString(5, order.getShipAddress2());
       preparedStatement.setString(6, order.getShipCity());
@@ -189,7 +189,7 @@ public class OrderDaoImpl implements OrderDao {
       /* config the update info */
       preparedStatement.setString(1, order.getOrderId() + "");
       preparedStatement.setString(2, order.getOrderId() + "");
-      preparedStatement.setString(3, order.getOrderDate().toString());
+      preparedStatement.setString(3, order.getOrderDate());
       preparedStatement.setString(4, order.getStatus());
 
       /* update */

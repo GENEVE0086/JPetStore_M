@@ -15,7 +15,7 @@
 				<a href="checkOrder?orderId=${order.orderId}">${order.orderId}</a>
 			</td>
 			<td>
-				<fmt:formatDate value="${order.orderDate}" pattern="yyyy/MM/dd hh:mm:ss" />
+					${sessionScope.order.orderDate}
 			</td>
 			<td>
 				<fmt:formatNumber value="${order.totalPrice}" pattern="$#,##0.00" />

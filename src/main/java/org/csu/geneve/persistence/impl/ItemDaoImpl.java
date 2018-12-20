@@ -43,7 +43,7 @@ public class ItemDaoImpl implements ItemDao {
           "UPDATE INVENTORY SET QTY = QTY - ? WHERE ITEMID = ?";
 
   private static final String GET_PRODUCT_ID =
-          "SELECT PRODUCTID, ITEMID FROM ITEM WHERE ITEMID= ?";
+          "SELECT PRODUCTID, ITEMID FROM ITEM WHERE ITEMID = ?";
 
   @Override
   public void updateInventoryQuantity(Map<String, Object> param) {

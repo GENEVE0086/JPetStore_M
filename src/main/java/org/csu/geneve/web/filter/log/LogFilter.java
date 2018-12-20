@@ -48,7 +48,7 @@ public class LogFilter implements Filter {
 
       LogService service = new LogService();
       service.insertLog(count, username, uri, date);
-      logger.info(count + "." + date + ":" + "user:" + username + " visit " + uri + "\n");
+      logger.info(count + "." + "user:" + username + " visit " + uri + "\n");
       System.out.println(count + "." + date + ":" + "user:" + username + " visit " + uri + "\n");
     } catch (Exception e) {
       e.printStackTrace();

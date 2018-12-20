@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
     password = request.getParameter("password");
 
     if (username.equals("")) {
-      session.setAttribute("message", "the id can not be null");
+      session.setAttribute("message", "please input right id and password");
       request.getRequestDispatcher(SIGNON_FORM).forward(request, response);
       return;
     }
@@ -63,14 +63,14 @@ public class LoginServlet extends HttpServlet {
 
     if (account2 == null) {
       /* not registered */
-      session.setAttribute("message", "this id is not registered");
+      session.setAttribute("message", "please input right id and password");
       request.getRequestDispatcher(SIGNON_FORM).forward(request, response);
       return;
     }
     if (account1 == null) {
       /* wrong password */
       session.setAttribute("username", username);
-      session.setAttribute("message", "please input the right password");
+      session.setAttribute("message", "please input right id and password");
       request.getRequestDispatcher(SIGNON_FORM).forward(request, response);
     } else {
       /*

@@ -50,11 +50,11 @@
     <div id="MenuContent">
       <a href="viewCart"><img align="middle" name="img_cart" src="images/cart.gif"/></a>
       <img align="middle" src="images/separator.gif"/>
-      <c:if test="${sessionScope.account == null}">
+      <c:if test="${sessionScope.account.username == null}">
         <a href="signonForm">Sign In</a>
       </c:if>
 
-      <c:if test="${sessionScope.account != null}">
+      <c:if test="${sessionScope.account.username != null}">
         <a href="signoff">
           Sign Out</a>
         <img align="middle" src="images/separator.gif"/>

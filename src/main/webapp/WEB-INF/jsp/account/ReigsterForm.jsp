@@ -16,10 +16,17 @@
       <tr>
         <td>Repeat password:</td>
         <td><input type="password" name="repeatedPassword" /></td>
-      </tr><font color="red"></font>
-    </table>${sessionScope.message}
+      </tr>
+    </table><font color="red">${sessionScope.message}</font>
 
     <%@ include file="IncludeAccountFields.jsp"%>
+    <br/>
+    verify code:
+    <input  type="text" name="checkCode"/>
+    <br/>
+    <img alt="验证码" id="imagecode" src="<%= request.getContextPath()%>/verify"/>
+    <a href="javascript:reloadCode();">change one </a>
+    <br>
 
     <input type="submit" value="Save Account Information">
 

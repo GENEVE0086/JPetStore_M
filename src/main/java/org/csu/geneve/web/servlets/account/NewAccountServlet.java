@@ -62,18 +62,37 @@ public class NewAccountServlet extends HttpServlet {
     listOption = request.getParameter("listOption") != null;
     bannerOption = request.getParameter("bannerOption") != null;
 
+    Account account = new Account();
+    ConfirmEditServlet.setAccount(password, firstName, lastName, email, phone,
+            address1, address2, city, state, zip, country, languages, categories,
+            listOption, bannerOption, account);
+
     if (username.equals("")) {
       /* null id is illegal */
       HttpSession session = request.getSession();
       session.setAttribute("message", "the id can not be null");
+      session.setAttribute("account",account);
+      request.getRequestDispatcher(REGISTER).forward(request, response);
+      return;
+    }
+
+    String piccode = (String) request.getSession().getAttribute("piccode");
+    String checkCode = request.getParameter("checkCode");  //取值
+    //把字符全部转换为大写的（此语句可以用于验证码不区分大小写）
+    checkCode = checkCode.toUpperCase();
+    if (!checkCode.equals(piccode)) {
+      HttpSession session = request.getSession();
+      session.setAttribute("account",account);
+      session.setAttribute("message", "verify code wrong");
       request.getRequestDispatcher(REGISTER).forward(request, response);
       return;
     }
 
     AccountService service = new AccountService();
-    Account account = service.getAccount(username);
+    account = service.getAccount(username);
     if (account != null) {
       /* id already exist */
+      account.setUsername("");
       HttpSession session = request.getSession();
       session.setAttribute("message", "the id has already existed");
       request.getRequestDispatcher(REGISTER).forward(request, response);
@@ -85,8 +104,13 @@ public class NewAccountServlet extends HttpServlet {
       edit data
       */
 
-
       HttpSession session = request.getSession();
+      account = new Account();
+      account.setUsername(username);
+      ConfirmEditServlet.setAccount(password, firstName, lastName, email, phone,
+              address1, address2, city, state, zip, country, languages, categories,
+              listOption, bannerOption, account);
+
       if (password.equals("")) {
         /* null password is is illegal */
         session.setAttribute("username", username);
@@ -94,12 +118,6 @@ public class NewAccountServlet extends HttpServlet {
         request.getRequestDispatcher(REGISTER).forward(request, response);
         return;
       }
-
-      account = new Account();
-      account.setUsername(username);
-      ConfirmEditServlet.setAccount(password, firstName, lastName, email, phone,
-              address1, address2, city, state, zip, country, languages, categories,
-              listOption, bannerOption, account);
 
       /* service to put new info into data base*/
       AccountService accountService = new AccountService();
@@ -117,7 +135,6 @@ public class NewAccountServlet extends HttpServlet {
       session.setAttribute("username", username);
       session.setAttribute("message", "please input same password");
       request.getRequestDispatcher(REGISTER).forward(request, response);
-
     }
   }
 }

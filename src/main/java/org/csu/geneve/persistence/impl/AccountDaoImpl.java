@@ -84,7 +84,7 @@ public class AccountDaoImpl implements AccountDao {
         resultAccount.setFavouriteCategoryId(resultSet.getString(14));
         resultAccount.setListOption(resultSet.getInt(15) == 1);
         resultAccount.setBannerOption(resultSet.getInt(16) == 1);
-        resultAccount.setBannerName(resultSet.getString(18));
+        resultAccount.setBannerName(resultSet.getString(17));
       }
 
       //disconnect to database
