@@ -14,10 +14,8 @@
   </div>
 
   <div id="Banner">
-    GENEVE
+    GENEVE && AIZEN
   </div>
-
-</div>
 
 </body>
 </html>
